@@ -1,6 +1,6 @@
 # app-nuxt
 
-> My beautiful Nuxt.js project
+> Application with Nuxt.JS for training
 
 ## Build Setup
 
