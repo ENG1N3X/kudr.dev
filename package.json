@@ -1,7 +1,7 @@
 {
   "name": "app-nuxt",
-  "version": "1.0.0",
-  "description": "My beautiful Nuxt.js project",
+  "version": "0.1.0",
+  "description": "Application with Nuxt.JS for training",
   "author": "eng1n3x",
   "private": true,
   "scripts": {
