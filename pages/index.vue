@@ -17,6 +17,15 @@ export default {
     AppHeader,
     AppCardsList,
     AppFooter
+  },
+  async fetch({ store }) {
+    try {
+      if (store.getters['cards/cardsList/cardsList'].length === 0) {
+        await store.dispatch('cards/cardsList/getAllCards')
+      }
+    } catch (e) {
+      console.error(e)
+    }
   }
 }
 </script>

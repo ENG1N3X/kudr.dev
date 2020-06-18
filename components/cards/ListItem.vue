@@ -2,9 +2,16 @@
   <nuxt-link to="#!" class="item">
     <img src="#!" alt="image" />
     <h4>ListDataItem-title</h4>
-    <p>ListDataItem-desc</p>
   </nuxt-link>
 </template>
+
+<script>
+export default {
+  data() {
+    return {}
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .item
