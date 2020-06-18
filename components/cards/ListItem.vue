@@ -1,9 +1,9 @@
 <template>
-  <a href="#!" class="item">
+  <nuxt-link to="#!" class="item">
     <img src="#!" alt="image" />
     <h4>ListDataItem-title</h4>
     <p>ListDataItem-desc</p>
-  </a>
+  </nuxt-link>
 </template>
 
 <style lang="sass" scoped>
