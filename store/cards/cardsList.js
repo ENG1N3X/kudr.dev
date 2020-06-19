@@ -5,10 +5,8 @@ export const state = () => ({
 export const actions = {
   async getAllCards({ commit }) {
     try {
-      const cards = await this.$axios.$get('https://jsonplaceholder.typicode.com/users')
-      // /api/v1/card/getAll
+      const cards = await this.$axios.$get('/api/v1/card/getAll')
       commit('SET_CARDS_LIST', cards)
-      console.log('Cards loaded.')
     } catch (e) {
       console.error(e)
     }
