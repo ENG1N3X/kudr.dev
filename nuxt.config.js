@@ -52,6 +52,24 @@ module.exports = {
    */
   axios: {},
   /*
+   ** Router configuration
+   ** See https://ru.nuxtjs.org/guide/routing/
+   */
+  router: {
+    // routes: [
+    //   {
+    //     name: 'index',
+    //     path: '/main',
+    //     component: 'pages/index.vue'
+    //   },
+    //   {
+    //     name: 'card-id',
+    //     path: '/card/:id?',
+    //     component: 'pages/card/_id.vue'
+    //   }
+    // ]
+  },
+  /*
    ** Build configuration
    */
   build: {
