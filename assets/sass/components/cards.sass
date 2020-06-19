@@ -1,0 +1,42 @@
+.cards
+    &Item
+        min-height: 275px
+        height: 100%
+        display: flex
+        flex-direction: column
+        text-align: center
+        justify-content: space-between
+        align-items: center
+
+        box-shadow: 0 0 4px $color-000 !important
+        border-radius: 8px
+
+        text-decoration: none !important
+        transition: .2s
+        &:hover
+            transform: scale(1.05)
+
+        &__image
+            min-height: 50%
+            width: 100%
+            background: $color-a5a
+
+            display: flex
+            justify-content: center
+            align-items: center
+
+            img
+                max-width: 50%
+                border-radius: 50%
+
+        &__content
+            display: flex
+            justify-content: center
+            align-items: center
+            min-height: 50%
+            width: 100%
+
+    &Empty
+        color: $color-000
+        display: block
+        text-align: center
