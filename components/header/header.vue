@@ -7,7 +7,10 @@
         </b-nav>
       </b-col>
       <b-col cols="5" class="text-right">
-        <nuxt-link to="#!" class="headerLink">Вход</nuxt-link>
+        <b-row>
+          <b-col cols="12"><nuxt-link to="/login" class="headerLink">Вход</nuxt-link></b-col>
+          <b-col cols="12"><nuxt-link to="/register" class="headerLink">Регистрация</nuxt-link></b-col>
+        </b-row>
       </b-col>
       <b-col cols="4" style="display: none">
         <h4 class="headerTitle">
