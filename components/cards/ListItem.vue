@@ -4,7 +4,8 @@
       <img src="cards/nuxt-card.png" alt="card-image" />
     </div>
     <div class="cardsItem__content">
-      <h4 class="mainTitle">{{ card.title }}</h4>
+      <h6>{{ card.title }}</h6>
+      <span>{{ card.subtitle }}</span>
     </div>
   </nuxt-link>
 </template>
