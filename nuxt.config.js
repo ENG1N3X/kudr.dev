@@ -19,7 +19,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#164c9e' },
   /*
    ** Global CSS
    */
@@ -27,7 +27,11 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '@/plugins/vuelidate.js'
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,7 +48,9 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://auth.nuxtjs.org
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
