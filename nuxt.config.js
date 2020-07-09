@@ -56,11 +56,30 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+  },
   /*
    ** Router configuration
    ** See https://ru.nuxtjs.org/guide/routing/
    */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/v1/auth/getByLogin', method: 'post', propertyName: 'data' },
+          logout: false,
+          user: { url: '/api/v1/auth', method: 'get', propertyName: 'user' }
+        }
+      }
+    },
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: false,
+      home: '/'
+    }
+  },
   router: {
     // routes: [
     //   {
