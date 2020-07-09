@@ -11,6 +11,7 @@ import AppHeader from '~/components/header/header.vue'
 import AppFooter from '~/components/footer/footer.vue'
 
 export default {
+  auth: false,
   components: {
     AppHeader,
     AppFooter
