@@ -8,13 +8,13 @@
         <b-form @submit.prevent="onSubmit">
           <b-form-group>
             <b-form-input v-model="form.login" type="text" placeholder="Введите login" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.</span>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.</span>
-            <!-- <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span> -->
+            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.<br /></span>
+            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.<br /></span>
+            <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span>
           </b-form-group>
           <b-form-group>
             <b-form-input v-model="form.password" type="password" placeholder="Введите пароль" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.</span>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.<br /></span>
             <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
           </b-form-group>
           <div class="d-flex justify-content-between align-items-center">
@@ -53,6 +53,9 @@ export default {
       }
     }
   },
+  mounted() {
+    this.$store.commit('CLEAR_ERROR')
+  },
   methods: {
     async onSubmit() {
       if (this.$v.$invalid) {
@@ -60,32 +63,21 @@ export default {
         return
       }
 
-      console.log('this.$auth.user1', this.$auth.user)
-      console.log('this.$store.state.auth.user1', this.$store.state.auth.user)
-      console.log('this.$auth.loggedIn1', this.$auth.loggedIn)
-      console.log('this.$store.state.auth.loggedIn1', this.$store.state.auth.loggedIn)
-
       try {
         await this.$store.commit('CLEAR_ERROR')
         await this.$store.dispatch('login', JSON.parse(JSON.stringify(this.form)))
-
-        console.log('this.$auth.user2', this.$auth.user)
-        console.log('this.$store.state.auth.user2', this.$store.state.auth.user)
-        console.log('this.$auth.loggedIn2', this.$auth.loggedIn)
-        console.log('this.$store.state.auth.loggedIn2', this.$store.state.auth.loggedIn)
       } catch (e) {
         console.error(e)
       }
 
-      // if (this.$store.getters['error']) {
-      //   console.log(this.$store.getters['error'])
-      // } else {
-      //   console.log(`Логин ${this.form.login} зарегистрирован.`)
-      //   this.formReset()
-      // }
+      if (this.$store.getters['error']) {
+        console.log(this.$store.getters['error'])
+      } else {
+        console.log(`Логин ${this.form.login} авторизован.`)
+        this.formReset()
+      }
     },
     formReset() {
-      this.form.name = ''
       this.form.login = ''
       this.form.password = ''
     }

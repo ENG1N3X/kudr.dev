@@ -6,6 +6,8 @@
           Copyright by
           <a :href="`${copyrightLink}`">{{ copyright }}</a>
         </span>
+        <br />
+        <span class="color-000"> logged? {{ $auth.loggedIn }} </span>
       </b-col>
     </b-row>
   </b-container>

@@ -8,18 +8,18 @@
         <b-form @submit.prevent="onSubmit">
           <b-form-group>
             <b-form-input v-model.trim="form.name" type="text" placeholder="Введите имя" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Имя должно содержать от 2х символов.</span>
+            <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Имя должно содержать от 2х символов.<br /></span>
             <span v-if="$v.form.name.$dirty && !$v.form.name.maxLength" class="color-error">Имя должно содержать не более 15ти символов.</span>
           </b-form-group>
           <b-form-group>
             <b-form-input v-model="form.login" type="text" placeholder="Введите login" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.</span>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.</span>
+            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.<br /></span>
+            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.<br /></span>
             <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span>
           </b-form-group>
           <b-form-group>
             <b-form-input v-model="form.password" type="password" placeholder="Введите пароль" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.</span>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.<br /></span>
             <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
           </b-form-group>
           <div class="d-flex justify-content-between align-items-center">
@@ -70,6 +70,9 @@ export default {
         maxLength: maxLength(21)
       }
     }
+  },
+  mounted() {
+    this.$store.commit('CLEAR_ERROR')
   },
   methods: {
     async onSubmit() {
