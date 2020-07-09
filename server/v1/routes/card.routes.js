@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router()
 const busboyBodyParser = require('busboy-body-parser')
 
-const { create, remove, update, getById, getAll } = require('../controllers/card.controllers')
+const { create, remove, update, getById, getAll } = require('../controllers/card.controller')
 
 router.post('/create', busboyBodyParser(), create)
 router.delete('/remove/:id', remove)

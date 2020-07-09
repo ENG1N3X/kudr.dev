@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const app = express()
 
 const cardRoutes = require('./v1/routes/card.routes')
+const userRoutes = require('./v1/routes/user.routes')
+const authRoutes = require('./v1/routes/auth.routes')
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -19,5 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use('/api/v1/card', cardRoutes)
+app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/auth', authRoutes)
 
 module.exports = app
