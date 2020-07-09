@@ -67,14 +67,14 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/v1/auth/getByLogin', method: 'post', propertyName: 'data' },
+          login: { url: '/api/v1/auth/getByLogin', method: 'post' },
           logout: false,
-          user: { url: '/api/v1/auth', method: 'get', propertyName: 'user' }
+          user: false
         }
       }
     },
     redirect: {
-      login: '/',
+      login: '/login',
       logout: '/',
       callback: false,
       home: '/'
