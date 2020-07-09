@@ -4,6 +4,7 @@
       <b-col cols="7">
         <b-nav>
           <nuxt-link to="/" class="headerLogo">Главная</nuxt-link>
+          <nuxt-link to="/users" class="headerLogo">Пользователи</nuxt-link>
         </b-nav>
       </b-col>
       <b-col cols="5" class="text-right">
