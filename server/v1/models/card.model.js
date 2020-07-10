@@ -16,6 +16,9 @@ const cardSchema = new Schema({
   image: {
     type: String
   },
+  link: {
+    type: String
+  },
   created: {
     type: String,
     require: true

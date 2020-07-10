@@ -15,7 +15,8 @@ const userSchema = new Schema({
   },
   admin: {
     type: Number,
-    require: true
+    require: true,
+    default: 0
   },
   created: {
     type: String,
