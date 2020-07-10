@@ -8,6 +8,9 @@
 import AppCardsList from '~/components/cards/List.vue'
 
 export default {
+  head: {
+    title: 'Главная'
+  },
   layout: 'default',
   components: {
     AppCardsList

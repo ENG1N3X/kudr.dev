@@ -31,6 +31,9 @@
 import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
+  head: {
+    title: 'Логин'
+  },
   data() {
     return {
       form: {
