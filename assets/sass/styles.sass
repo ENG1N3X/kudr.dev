@@ -10,8 +10,9 @@ body
     color: $color-fff
 
 button, form, input, textarea, a
-    outline: none !important
-    box-shadow: none !important
+    &:active, &:focus
+        box-shadow: none !important
+        outline: none !important
 
 .mainTitle
     font-family: Ubuntu-Light, sans-serif
