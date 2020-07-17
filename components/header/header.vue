@@ -5,7 +5,7 @@
         <b-nav>
           <nuxt-link to="/" class="headerLogo">Главная</nuxt-link>
           <nuxt-link to="/users" class="headerLogo">Пользователи</nuxt-link>
-          <nuxt-link to="/admin/cards" class="headerLogo" v-if="$auth.loggedIn && $store.getters['authUser'].admin">Панель</nuxt-link>
+          <nuxt-link to="/admin/main" class="headerLogo" v-if="$auth.loggedIn && $store.getters['authUser'].admin">Панель</nuxt-link>
         </b-nav>
       </b-col>
       <b-col cols="5" class="text-right" v-if="!$auth.loggedIn">
