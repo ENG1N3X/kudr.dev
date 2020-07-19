@@ -13,9 +13,10 @@
     </b-row>
     <b-row class="adminCard__content">
       <b-col cols="4" class="m-auto">
-        <div class="adminCard__img">
+        <div class="adminCard__img" v-if="card.image">
           <img :src="`../${card.image}`" :alt="`${card.title}`" />
         </div>
+        <p v-else class="color-fff text-center">Картинка куда-то укатилась...</p>
       </b-col>
       <b-col cols="8">
         <b-row class="align-items-center">
@@ -42,7 +43,7 @@
               drop-placeholder="Drop file here..."
             ></b-form-file>
           </b-col>
-          <b-col cols="5 text-right">
+          <b-col cols="5" class="text-right">
             <b-button variant="warning" type="submit" style="color: #fff !important" @click.prevent="edit(card._id, form)">Изменить</b-button>
             <b-button variant="danger" type="submit" class="color-fff" @click.prevent="remove(card._id)">Удалить</b-button>
           </b-col>
@@ -75,10 +76,15 @@ export default {
   },
   methods: {
     async edit(id, form) {
+      // Сделать загрузку через FormData()
+
+      // if (!form.image) {
+      //   form.image = 'cards/fake-card.png'
+      // }
       form.modified = new Date().toLocaleString()
       try {
         await this.$axios.$put('/api/v1/card/update/' + id, form)
-        await this.$store.dispatch('cards/cardsList/getAllCards')
+        // await this.$store.dispatch('cards/cardsList/getAllCards')
       } catch (e) {
         console.error(e)
       }
@@ -91,8 +97,8 @@ export default {
       this.form.title = ''
       this.form.subtitle = ''
       this.form.description = ''
-      this.form.image = ''
-      this.form.imageFile = ''
+      this.form.image = null
+      this.form.imageFile = null
       this.form.link = ''
       this.form.modfifed = ''
       // this.form.isActive = ""

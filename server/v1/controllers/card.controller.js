@@ -22,7 +22,10 @@ module.exports.remove = async (req, res) => {
 module.exports.update = async (req, res) => {
   try {
     const fd = req.body
-    await Card.updateOne({ _id: req.params.id }, fd, { new: true })
+    console.log(fd)
+    console.log(fd.imageFile)
+    console.log(fd.imageFile.name)
+    // await Card.updateOne({ _id: req.params.id }, fd, { new: true })
     res.json({ message: 'Данные обновленны.' })
   } catch (e) {
     res.status(500).json({ message: 'Ошибка обновления данных.' })
