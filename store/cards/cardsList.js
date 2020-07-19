@@ -5,6 +5,7 @@ export const state = () => ({
 export const actions = {
   async getAllCards({ commit }) {
     try {
+      console.log('Обновление store - cardsList')
       const cards = await this.$axios.$get('/api/v1/card/getAll')
       commit('SET_CARDS_LIST', cards)
     } catch (e) {

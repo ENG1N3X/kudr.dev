@@ -9,4 +9,48 @@
                 text-decoration: none
             &:not(:last-child)
                 margin-bottom: 5px
-                
+    &Card
+        background: $color-main
+        border-radius: 10px
+        &__top
+            background: $color-74b
+            padding: 10px 0
+            align-items: center
+            cursor: pointer
+            transition: .5s
+        &__content
+            margin-bottom: 10px
+
+            // Анимация раскрытия
+            visibility: hidden
+            overflow: hidden
+            max-height: 0       
+            transition: .3s
+        &__img
+            display: block
+            img
+                display: block
+                max-width: 100%
+                height: auto
+        legend
+            font-size: rem(14)
+        &__input
+            color: $color-main
+            &.textarea
+                min-height: 100px
+                max-height: 250px
+        small
+            color: $color-44e !important
+            font-size: rem(12) !important
+
+        &:not(:last-child)
+            margin-bottom: 20px
+
+        &.active
+            .adminCard
+                &__top
+                    background: $color-44e
+                &__content
+                    padding: 10px 20px
+                    max-height: 800px
+                    visibility: visible

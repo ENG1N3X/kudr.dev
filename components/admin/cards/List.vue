@@ -14,14 +14,10 @@ export default {
   components: {
     AppAdminCardsListItem
   },
-  data() {
-    return {
-      cards: []
+  computed: {
+    cards() {
+      return this.$store.getters['cards/cardsList/cardsList']
     }
-  },
-  mounted() {
-    this.cards = this.$store.getters['cards/cardsList/cardsList']
-    console.log(this.cards)
   }
 }
 </script>

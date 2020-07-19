@@ -8,3 +8,10 @@
     </b-row>
   </b-container>
 </template>
+
+<script>
+export default {
+  middleware: 'is-auth',
+  auth: false
+}
+</script>
