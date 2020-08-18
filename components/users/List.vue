@@ -1,0 +1,26 @@
+<template>
+  <b-container class="users">
+    <b-row>
+      <b-col cols="3"> <p class="usersHead">Имя</p></b-col>
+      <b-col cols="3"> <p class="usersHead">Логин</p></b-col>
+      <b-col cols="3"> <p class="usersHead">Регистрация</p></b-col>
+      <b-col cols="3"> <p class="usersHead">Статус</p></b-col>
+    </b-row>
+    <app-users-list-item v-for="user in users" :key="user._id" :user="user" />
+  </b-container>
+</template>
+
+<script>
+import AppUsersListItem from '~/components/users/ListItem.vue'
+
+export default {
+  components: {
+    AppUsersListItem
+  },
+  computed: {
+    users() {
+      return this.$store.getters['users/usersList/usersList']
+    }
+  }
+}
+</script>

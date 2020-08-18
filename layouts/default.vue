@@ -1,0 +1,28 @@
+<template>
+  <div class="default-layout">
+    <app-header />
+    <nuxt />
+    <app-footer />
+  </div>
+</template>
+
+<script>
+import AppHeader from '~/components/header/header.vue'
+import AppFooter from '~/components/footer/footer.vue'
+
+export default {
+  middleware: 'is-auth',
+  auth: false,
+  components: {
+    AppHeader,
+    AppFooter
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+.default-layout
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+</style>

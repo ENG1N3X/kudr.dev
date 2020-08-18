@@ -1,0 +1,29 @@
+.header
+    padding: 10px
+    background: $color-main
+    border-radius: 8px
+    box-shadow: 0 0 4px $color-000
+    &Logo
+        font-size: rem(16)
+        &:not(:last-child)
+            margin-right: 10px
+    &Link
+        font-size: rem(12)
+    &Logo, &Link
+        color: $color-fff
+        transition: .2s
+        &:hover
+            text-decoration: none
+            color: $color-fff
+            opacity: 0.9
+    &Title
+        font-size: rem(14)
+        text-align: right
+        margin-bottom: 0
+        a
+            text-decoration: none
+            transition: .2s
+            &:hover
+                color: $color-fff
+                opacity: 0.9
+

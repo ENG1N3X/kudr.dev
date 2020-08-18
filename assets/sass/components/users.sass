@@ -1,0 +1,22 @@
+.users
+    overflow-x: auto
+    &Head
+        color: $color-main
+        text-align: center
+        font-size: rem(16)
+        padding: 10px
+        border-bottom: 1px solid $color-a5a
+    &Info
+        color: $color-000
+        text-align: center
+        font-size: rem(14)
+        &.default,&.admin,&.owner
+            color: $color-fff
+            border-radius: 12px
+            padding: 2px
+        &.default
+            background: $color-main
+        &.admin
+            background: $color-error
+        &.owner
+            background: $color-44e

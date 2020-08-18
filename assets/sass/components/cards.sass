@@ -1,0 +1,61 @@
+.cards
+    &Item
+        min-height: 250px
+        height: 100%
+        display: flex
+        flex-direction: column
+        text-align: center
+        justify-content: space-between
+        align-items: center
+
+        box-shadow: 0 0 4px $color-000 !important
+        border-radius: 8px
+
+        text-decoration: none !important
+        transition: .2s
+        &:hover
+            transform: scale(1.05)
+            .cardsItem__image
+                min-height: 50%
+            .cardsItem__content
+                span
+                    visibility: visible
+
+        &__image
+            min-height: 60%
+            width: 100%
+            background: $color-main
+
+            display: flex
+            justify-content: center
+            align-items: center
+
+            transition: .2s
+
+            img
+                max-width: 50%
+                border-radius: 50%
+
+        &__content
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            height: 100%
+            width: 100%
+
+            h6
+                color: $color-000
+                font-size: rem(20)
+                margin-bottom: 2px
+            
+            span
+                visibility: hidden
+                color: $color-main
+                font-size: rem(13)
+                transition: .1s
+
+    &Empty
+        color: $color-000
+        display: block
+        text-align: center
