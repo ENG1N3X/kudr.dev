@@ -12,7 +12,7 @@ export default {
     title: 'Пользователи'
   },
   layout: 'default',
-  middleware: 'auth',
+  // middleware: 'auth',
   components: {
     AppUsersList
   },

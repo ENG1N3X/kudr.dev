@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import AppHeader from '~/components/header/header.vue'
-import AppFooter from '~/components/footer/footer.vue'
+import AppHeader from '~/components/header.vue'
+import AppFooter from '~/components/footer.vue'
 
 export default {
-  middleware: 'is-auth',
-  auth: false,
+  // middleware: 'is-auth',
+  // auth: false,
   components: {
     AppHeader,
     AppFooter

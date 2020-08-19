@@ -3,28 +3,37 @@
     background: $color-main
     border-radius: 8px
     box-shadow: 0 0 4px $color-000
-    &Logo
-        font-size: rem(16)
-        &:not(:last-child)
-            margin-right: 10px
-    &Link
-        font-size: rem(12)
-    &Logo, &Link
-        color: $color-fff
-        transition: .2s
-        &:hover
-            text-decoration: none
+
+.headerNav
+    .nav-item
+        .nav-link
+            font-size: rem(16)
             color: $color-fff
-            opacity: 0.9
-    &Title
-        color: $color-fff
-        font-size: rem(14)
-        text-align: right
-        margin-bottom: 0
-        a
-            text-decoration: none
             transition: .2s
             &:hover
-                color: $color-fff
-                opacity: 0.9
+                @extend .active
+            &.active
+                color: $color-74b
+        &:not(:last-child)
+            margin-right: 10px
+    
+.headerProfile
+    color: $color-fff
+    font-size: rem(14)
+    text-align: right
+    margin-bottom: 0
+    a
+        text-decoration: none
+        transition: .2s
+        &:hover
+            color: $color-fff
+            opacity: 0.9
 
+.headerLink
+    font-size: rem(12)
+    color: $color-fff
+    transition: .2s
+    &:hover
+        text-decoration: none
+        color: $color-fff
+        opacity: 0.9

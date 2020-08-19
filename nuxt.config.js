@@ -81,18 +81,8 @@ module.exports = {
     }
   },
   router: {
-    // routes: [
-    //   {
-    //     name: 'index',
-    //     path: '/main',
-    //     component: 'pages/index.vue'
-    //   },
-    //   {
-    //     name: 'card-id',
-    //     path: '/card/:id?',
-    //     component: 'pages/card/_id.vue'
-    //   }
-    // ]
+    linkActiveClass: 'active',
+    linkExactActiveClass: ''
   },
   /*
    ** Build configuration
