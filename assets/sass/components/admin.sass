@@ -1,17 +1,22 @@
-.admin
-    &Nav 
-        &-link
+.adminNav
+    .nav-item
+        .nav-link
             font-family: Ubuntu-Medium, sans-serif
             font-size: rem(14)
             color: $color-main
+            padding: 0
             transition: .2s
             &:hover
-                text-decoration: none
-            &:not(:last-child)
-                margin-bottom: 5px
-    &Card
-        background: $color-main
-        border-radius: 10px
+                @extend .active
+            &.active
+                color: $color-74b
+        &:not(:last-child)
+            margin-bottom: 5px
+    
+.adminCard
+    background: $color-main
+    border-radius: 10px
+    .adminCard
         &__top
             background: $color-74b
             padding: 10px 0
@@ -26,14 +31,15 @@
             overflow: hidden
             max-height: 0       
             transition: .3s
+            legend
+                color: $color-fff
+                font-size: rem(14)
         &__img
-            display: block
+            display: inline-block
             img
-                display: block
+                display: inline-block
                 max-width: 100%
                 height: auto
-        legend
-            font-size: rem(14)
         &__input
             color: $color-main
             &.textarea
@@ -46,11 +52,11 @@
         &:not(:last-child)
             margin-bottom: 20px
 
-        &.active
-            .adminCard
-                &__top
-                    background: $color-44e
-                &__content
-                    padding: 10px 20px
-                    max-height: 800px
-                    visibility: visible
+    &.active
+        .adminCard
+            &__top
+                background: $color-44e
+            &__content
+                padding: 10px 20px
+                max-height: 800px
+                visibility: visible
