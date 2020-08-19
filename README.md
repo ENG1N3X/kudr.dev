@@ -1,6 +1,6 @@
 # kudr.dev
 
-> **production branch** source code
+> **alfa branch** source code
 
 ## Application info
 
