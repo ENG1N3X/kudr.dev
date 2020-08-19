@@ -1,26 +1,49 @@
-.cards
-    &Item
-        min-height: 250px
-        height: 100%
-        display: flex
-        flex-direction: column
-        text-align: center
-        justify-content: space-between
-        align-items: center
+// Single page of card
+.cardPage
+    color: $color-fff
+    .cardPage
+        &__image
+            img
+                display: flex
+                margin: 0 auto
+        &__title
+            margin-bottom: 0
+        &__subtitle
+            font-family: Ubuntu-Medium, sans-serif
+            font-size: rem(12)
+        &__desc
+            font-family: Ubuntu-Light, sans-serif
+            font-size: rem(16)
+            margin-bottom: 60px
+        &__created, &__modified
+            font-family: Ubuntu-Light, sans-serif
+            display: flex
+            justify-content: flex-end
+    
+// Index page list of cards
+.cardItem
+    min-height: 250px
+    height: 100%
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: space-between
+    align-items: center
 
-        box-shadow: 0 0 4px $color-000 !important
-        border-radius: 8px
+    box-shadow: 0 0 4px $color-000 !important
+    border-radius: 8px
 
-        text-decoration: none !important
-        transition: .2s
-        &:hover
-            transform: scale(1.05)
-            .cardsItem__image
+    text-decoration: none !important
+    transition: .2s
+    &:hover
+        transform: scale(1.05)
+        .cardItem
+            &__image
                 min-height: 50%
-            .cardsItem__content
+            &__content
                 span
                     visibility: visible
-
+    .cardItem
         &__image
             min-height: 60%
             width: 100%
@@ -53,9 +76,4 @@
                 visibility: hidden
                 color: $color-main
                 font-size: rem(13)
-                transition: .1s
-
-    &Empty
-        color: $color-000
-        display: block
-        text-align: center
+                transition: .15s

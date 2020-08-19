@@ -1,7 +1,7 @@
 <template>
   <div>
     <form>
-      форма
+      Форма добавления
     </form>
     <app-admin-cards-list-item v-for="card in cards" :key="card._id" :card="card" />
   </div>

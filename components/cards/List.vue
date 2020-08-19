@@ -1,13 +1,13 @@
 <template>
-  <b-container class="cards">
+  <b-container>
     <b-row v-if="cards.length != 0" class="justify-content-center">
-      <b-col v-for="card in cards" :key="card._id" cols="7" sm="6" md="4" lg="3" xl="2" class="mb-30">
+      <b-col v-for="card in cards" :key="card._id" cols="7" sm="6" md="4" lg="3" class="mb-30">
         <app-cards-list-item :card="card" />
       </b-col>
     </b-row>
     <b-row v-else>
       <b-col>
-        <span class="cardsEmpty">Ни одна карточка не загружена.</span>
+        <span class="d-block color-000 text-center">Ни одна карточка не загружена.</span>
       </b-col>
     </b-row>
   </b-container>
