@@ -21,7 +21,7 @@ import AppFooter from '~/components/footer.vue'
 import AppAdminNav from '~/components/admin/Nav.vue'
 
 export default {
-  // middleware: ['auth', 'is-auth'],
+  middleware: ['auth', 'is-auth'],
   components: {
     AppHeader,
     AppFooter,

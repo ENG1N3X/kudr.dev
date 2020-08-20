@@ -9,10 +9,7 @@
           <b-nav-item to="/users">
             Пользователи
           </b-nav-item>
-          <!-- <b-nav-item to="/admin/main" v-if="$auth.loggedIn && $store.getters['authUser'].admin">
-            Панель
-          </b-nav-item> -->
-          <b-nav-item to="/admin/main">
+          <b-nav-item to="/admin/main" v-if="$auth.loggedIn && $store.getters['authUser'].admin">
             Панель
           </b-nav-item>
         </b-nav>
