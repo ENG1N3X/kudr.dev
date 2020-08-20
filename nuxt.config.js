@@ -23,7 +23,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~assets/sass/styles.sass'],
+  css: ['~assets/sass/styles.sass', '~node_modules/lightbox2/dist/css/lightbox.min'],
   /*
    ** Plugins to load before mounting the App
    */

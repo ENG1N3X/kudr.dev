@@ -1,5 +1,5 @@
 <template>
-  <b-form class="adminCard" :class="form.isActive ? 'active' : ''">
+  <b-form class="adminCard bg-main" :class="form.isActive ? 'active' : ''">
     <b-row class="adminCard__top" @click="form.isActive = !form.isActive">
       <b-col cols="4">
         <h4 class="mb-0">{{ card.title }}</h4>
@@ -13,11 +13,29 @@
     </b-row>
     <b-row class="adminCard__content">
       <b-col cols="4" class="m-auto">
-        <div class="adminCard__img" v-if="card.image">
-          <img v-if="form.image" :src="uploadImageURL" :alt="`${form.image.name}`" />
-          <img v-else :src="`../${card.image}`" :alt="`${card.title}`" />
+        <b-row v-if="form.image">
+          <b-col cols="12" class="mb-1 text-center">
+            <h6 class="color-fff mb-1">Старая картинка</h6>
+            <div class="d-inline-block">
+              <a :href="`../${card.image}`" data-lightbox="Старая картинка">
+                <img style="max-width: 40%; height: auto;" :src="`../${card.image}`" :alt="`${card.title}`" />
+              </a>
+            </div>
+          </b-col>
+          <b-col cols="12" class="text-center">
+            <h6 class="color-fff mb-1">Новая картинка</h6>
+            <div class="d-inline-block">
+              <a :href="uploadImageURL" data-lightbox="Новая картинка">
+                <img style="max-width: 40%; height: auto;" v-if="form.image" :src="uploadImageURL" :alt="`${form.image.name}`" />
+              </a>
+            </div>
+          </b-col>
+        </b-row>
+        <div class="adminCard__img" v-else>
+          <a :href="`../${card.image}`" data-lightbox="Картинка сейчас">
+            <img :src="`../${card.image}`" :alt="`${card.title}`" />
+          </a>
         </div>
-        <p v-else class="color-fff text-center">Картинка куда-то укатилась...</p>
       </b-col>
       <b-col cols="8">
         <b-row class="align-items-center">
@@ -54,6 +72,10 @@
   </b-form>
 </template>
 <script>
+if (process.client) {
+  require('lightbox2')
+}
+
 export default {
   data() {
     return {
@@ -98,8 +120,13 @@ export default {
       }
       this.formReset()
     },
-    remove(id) {
-      console.log(id)
+    async remove(id) {
+      try {
+        await this.$axios.$delete('/api/v1/card/remove/' + id)
+        await this.$store.dispatch('cards/cardsList/getAllCards')
+      } catch (e) {
+        console.error(e)
+      }
     },
     formReset() {
       this.form.image = null

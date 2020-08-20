@@ -1,8 +1,12 @@
 <template>
-  <app-admin-cards-list />
+  <div>
+    <app-admin-cards-add-item />
+    <app-admin-cards-list />
+  </div>
 </template>
 
 <script>
+import AppAdminCardsAddItem from '~/components/admin/cards/AddItem.vue'
 import AppAdminCardsList from '~/components/admin/cards/List.vue'
 
 export default {
@@ -11,6 +15,7 @@ export default {
   },
   layout: 'admin',
   components: {
+    AppAdminCardsAddItem,
     AppAdminCardsList
   }
 }

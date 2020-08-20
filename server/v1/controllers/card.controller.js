@@ -6,6 +6,21 @@ const moment = require('moment')
 module.exports.create = async (req, res) => {
   try {
     const fd = req.body
+    fd.created = new Date().toLocaleString()
+    if (req.files.image) {
+      const fileName = moment().format('YYYY-MM-DD-HH-mm-ss-') + req.files.image.name
+      const fileImageData = req.files.image.data
+      const savePath = path.resolve(__dirname, '../../../static/upload/cards/')
+
+      await fs.writeFileSync(`${savePath}/${fileName}`, fileImageData, (error) => {
+        if (!error) {
+          console.error('Не удалось загрузить картинку!', error)
+        }
+      })
+      fd.image = `upload/cards/${fileName}`
+    } else {
+      fd.image = 'cards/fake-card.png'
+    }
     await Card.create(fd)
     res.status(200).json({ message: 'Данные добавлены.' })
   } catch (e) {

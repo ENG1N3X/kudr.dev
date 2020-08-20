@@ -14,8 +14,8 @@
             margin-bottom: 5px
     
 .adminCard
-    background: $color-main
     border-radius: 10px
+    margin-bottom: 20px
     .adminCard
         &__top
             background: $color-74b
@@ -51,6 +51,11 @@
 
         &:not(:last-child)
             margin-bottom: 20px
+
+        &__add
+            legend
+                color: $color-000
+                font-size: rem(14)
 
     &.active
         .adminCard
