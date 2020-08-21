@@ -21,6 +21,10 @@ const userSchema = new Schema({
   created: {
     type: String,
     require: true
+  },
+  modified: {
+    type: String,
+    require: true
   }
 })
 

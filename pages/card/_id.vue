@@ -12,7 +12,7 @@
         <p class="cardPage__desc">{{ card.description }}</p>
         <time class="cardPage__created">Добавлено {{ card.created }}</time>
         <time class="cardPage__modified" v-if="card.modified">Изменено {{ card.modified }}</time>
-        <a :href="`${card.link}`" class="btn btn-light" v-if="card.link">Ссылка</a>
+        <b-button :href="card.link" target="_blank" :disabled="!card.link">Ссылка</b-button>
       </b-col>
     </b-row>
   </b-container>

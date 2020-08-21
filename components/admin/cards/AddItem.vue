@@ -1,8 +1,11 @@
 <template>
   <b-form class="adminCard">
-    <b-row>
-      <b-col cols="12">
+    <b-row class="justify-content-between mb-4">
+      <b-col cols="3">
         <h2 class="mb-0">Добавить</h2>
+      </b-col>
+      <b-col cols="3" class="text-right">
+        <b-button variant="success" type="submit" class="color-fff" @click.prevent="create(form)">Добавить</b-button>
       </b-col>
     </b-row>
     <b-row class="adminCard__add">
@@ -15,7 +18,7 @@
         <p class="color-000 mb-0 text-center" v-else>Картинка еще не загружена</p>
       </b-col>
       <b-col cols="8">
-        <b-row class="align-items-center">
+        <b-row class="align-items-center mb-2">
           <b-col>
             <b-form-group label="Введите название" class="mb-0">
               <b-form-input v-model="form.title" class="adminCard__input" placeholder="Название"></b-form-input>
@@ -27,20 +30,29 @@
             </b-form-group>
           </b-col>
         </b-row>
-        <b-form-group label="Введите описание" class="mb-0">
+        <b-form-group label="Введите описание" class="mb-2">
           <b-form-textarea v-model="form.description" class="adminCard__input textarea" placeholder="Описание"></b-form-textarea>
         </b-form-group>
-        <b-row class="mt-2 align-items-center justify-content-end">
-          <b-col cols="7">
-            <b-form-file
-              v-model="form.image"
-              :state="Boolean(form.image)"
-              :placeholder="form.image ? form.image.name : 'Choose a file or drop it here...'"
-              drop-placeholder="Drop file here..."
-            ></b-form-file>
+        <b-row class="justify-content-between align-items-end mb-2">
+          <b-col cols="9">
+            <b-form-group label="Вставьте полную ссылку" class="mb-0">
+              <b-form-input v-model="form.link" class="adminCard__input" placeholder="Ссылка"></b-form-input>
+            </b-form-group>
           </b-col>
-          <b-col cols="5" class="text-right">
-            <b-button variant="success" type="submit" class="color-fff" @click.prevent="create(form)">Добавить</b-button>
+          <b-col cols="3" class="text-right">
+            <b-button :href="form.link" target="_blank" :disabled="!form.link">Ссылка</b-button>
+          </b-col>
+        </b-row>
+        <b-row class="align-items-center justify-content-end">
+          <b-col cols="12">
+            <b-form-group label="Выберите картинку" class="mb-0">
+              <b-form-file
+                v-model="form.image"
+                :state="Boolean(form.image)"
+                :placeholder="form.image ? form.image.name : 'Choose a file or drop it here...'"
+                drop-placeholder="Drop file here..."
+              ></b-form-file>
+            </b-form-group>
           </b-col>
         </b-row>
       </b-col>
@@ -61,7 +73,7 @@ export default {
         subtitle: 'subtitle',
         description: 'description',
         image: null,
-        link: 'linkhere.com'
+        link: 'localhost:3000'
       }
     }
   },
