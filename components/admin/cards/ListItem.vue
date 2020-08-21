@@ -38,7 +38,7 @@
         </div>
       </b-col>
       <b-col cols="8">
-        <b-row class="align-items-center">
+        <b-row class="align-items-center mb-2">
           <b-col>
             <b-form-group label="Введите новое название" class="mb-0">
               <b-form-input v-model="form.title" class="adminCard__input" placeholder="Название"></b-form-input>
@@ -50,10 +50,20 @@
             </b-form-group>
           </b-col>
         </b-row>
-        <b-form-group label="Введите новое описание" class="mb-0">
+        <b-form-group label="Введите новое описание" class="mb-2">
           <b-form-textarea v-model="form.description" class="adminCard__input textarea" placeholder="Описание"></b-form-textarea>
         </b-form-group>
-        <b-row class="mt-2 align-items-center justify-content-end">
+        <b-row class="justify-content-between align-items-end mb-2">
+          <b-col cols="9">
+            <b-form-group label="Вставьте новую полную ссылку" class="mb-0">
+              <b-form-input v-model="form.link" class="adminCard__input" placeholder="Ссылка"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col cols="3" class="text-right">
+            <b-button :href="form.link" target="_blank" :disabled="!form.link">Ссылка</b-button>
+          </b-col>
+        </b-row>
+        <b-row class="align-items-center justify-content-end">
           <b-col cols="7">
             <b-form-file
               v-model="form.image"
