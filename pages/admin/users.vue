@@ -1,13 +1,13 @@
 <template>
   <b-row>
-    <app-admin-users-add-item />
-    <app-admin-users-list-item v-for="user in users" :key="user._id" :user="user" />
+    <app-add-user />
+    <app-list-user v-for="user in users" :key="user._id" :user="user" />
   </b-row>
 </template>
 
 <script>
-import AppAdminUsersAddItem from '~/components/admin/users/AddItem.vue'
-import AppAdminUsersListItem from '~/components/admin/users/ListItem.vue'
+import AppAddUser from '~/components/admin/users/AddUser.vue'
+import AppListUser from '~/components/admin/users/ListUser.vue'
 
 export default {
   head: {
@@ -15,8 +15,8 @@ export default {
   },
   layout: 'admin',
   components: {
-    AppAdminUsersAddItem,
-    AppAdminUsersListItem
+    AppAddUser,
+    AppListUser
   },
   computed: {
     users() {

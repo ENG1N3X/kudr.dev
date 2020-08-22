@@ -2,7 +2,7 @@
   <b-container>
     <b-row v-if="cards.length != 0" class="justify-content-center">
       <b-col v-for="card in cards" :key="card._id" cols="7" sm="6" md="4" lg="3" class="mb-30">
-        <app-cards-list-item :card="card" />
+        <app-list-card :card="card" />
       </b-col>
     </b-row>
     <b-row v-else>
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import AppCardsListItem from '~/components/cards/ListItem.vue'
+import AppListCard from '~/components/cards/ListCard.vue'
 
 export default {
   components: {
-    AppCardsListItem
+    AppListCard
   },
   data() {
     return {

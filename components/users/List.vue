@@ -6,16 +6,16 @@
       <b-col cols="3"> <p class="usersHead">Регистрация</p></b-col>
       <b-col cols="3"> <p class="usersHead">Статус</p></b-col>
     </b-row>
-    <app-users-list-item v-for="user in users" :key="user._id" :user="user" />
+    <app-list-user v-for="user in users" :key="user._id" :user="user" />
   </b-container>
 </template>
 
 <script>
-import AppUsersListItem from '~/components/users/ListItem.vue'
+import AppListUser from '~/components/users/ListUser.vue'
 
 export default {
   components: {
-    AppUsersListItem
+    AppListUser
   },
   computed: {
     users() {
