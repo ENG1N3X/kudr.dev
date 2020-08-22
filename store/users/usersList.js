@@ -14,6 +14,7 @@ export const actions = {
   },
   async getAllUsers({ commit }) {
     try {
+      console.log('Update store - usersList')
       const users = await this.$axios.$get('/api/v1/user/getAll')
       commit('SET_USERS_LIST', users)
     } catch (e) {

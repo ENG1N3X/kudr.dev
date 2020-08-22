@@ -1,13 +1,13 @@
 <template>
   <div>
-    <app-admin-cards-add-item />
-    <app-admin-cards-list />
+    <app-add-card />
+    <app-list />
   </div>
 </template>
 
 <script>
-import AppAdminCardsAddItem from '~/components/admin/cards/AddItem.vue'
-import AppAdminCardsList from '~/components/admin/cards/List.vue'
+import AppAddCard from '~/components/admin/cards/AddCard.vue'
+import AppList from '~/components/admin/cards/List.vue'
 
 export default {
   head: {
@@ -15,8 +15,8 @@ export default {
   },
   layout: 'admin',
   components: {
-    AppAdminCardsAddItem,
-    AppAdminCardsList
+    AppAddCard,
+    AppList
   }
 }
 </script>

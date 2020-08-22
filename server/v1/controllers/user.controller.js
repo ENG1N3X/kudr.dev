@@ -37,7 +37,14 @@ module.exports.update = async (req, res) => {
 module.exports.getById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    res.status(200).json(user)
+    const userData = {
+      id: user._id,
+      login: user.login,
+      name: user.name,
+      admin: user.admin,
+      created: user.created
+    }
+    res.status(200).json(userData)
   } catch (e) {
     res.status(500).json({ message: 'Ошибка получения данных.' })
   }

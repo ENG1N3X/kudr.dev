@@ -12,7 +12,6 @@ import AppFooter from '~/components/footer.vue'
 
 export default {
   middleware: 'is-auth',
-  auth: false,
   components: {
     AppHeader,
     AppFooter
