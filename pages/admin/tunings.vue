@@ -1,14 +1,19 @@
 <template>
   <div>
-    <p class="color-000">Страница не заполнена.</p>
+    <app-tunings />
   </div>
 </template>
 
 <script>
+import AppTunings from '~/components/admin/tunings'
+
 export default {
   head: {
     title: 'Админ-панель'
   },
-  layout: 'admin'
+  layout: 'admin',
+  components: {
+    AppTunings
+  }
 }
 </script>

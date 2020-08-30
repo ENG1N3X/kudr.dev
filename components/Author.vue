@@ -2,10 +2,10 @@
   <b-container class="author mb-50">
     <b-row class="align-items-center mb-20">
       <b-col col cols="12" lg="6">
-        <h1 class="authorName">{{ author.name }}</h1>
+        <h1 class="authorName">{{ settings.title }}</h1>
       </b-col>
       <b-col col cols="12" lg="6">
-        <p class="authorText text-center text-lg-left">{{ author.text }}</p>
+        <p class="authorText text-center text-lg-left">{{ settings.text }}</p>
       </b-col>
     </b-row>
     <b-row>
@@ -44,10 +44,9 @@ export default {
       modal: {
         title: 'Связь с автором'
       },
-      author: {
-        name: 'Yuriy K.',
-        text:
-          'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, a. Voluptate, fuga! Quos officiis molestias, ut optio ab eius aut hic minus quod consequuntur, ipsa cupiditate, deserunt ducimus provident maiores.'
+      settings: {
+        title: JSON.parse(JSON.stringify(this.$store.getters['tunings/tuningsList'][0])).title,
+        text: JSON.parse(JSON.stringify(this.$store.getters['tunings/tuningsList'][0])).text
       }
     }
   }

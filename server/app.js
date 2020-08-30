@@ -7,6 +7,7 @@ const app = express()
 const cardRoutes = require('./v1/routes/card.routes')
 const userRoutes = require('./v1/routes/user.routes')
 const authRoutes = require('./v1/routes/auth.routes')
+const tuningRoutes = require('./v1/routes/tuning.routes')
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -23,5 +24,6 @@ app.use(bodyParser.json())
 app.use('/api/v1/card', cardRoutes)
 app.use('/api/v1/user', userRoutes)
 app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/tun', tuningRoutes)
 
 module.exports = app

@@ -23,6 +23,9 @@ export default {
       if (store.getters['cards/cardsList/cardsList'].length === 0) {
         await store.dispatch('cards/cardsList/getAllCards')
       }
+      if (store.getters['tunings/tuningsList'].length === 0) {
+        await store.dispatch('tunings/getAllTunings')
+      }
     } catch (e) {
       console.error(e)
     }
