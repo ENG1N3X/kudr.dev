@@ -71,7 +71,7 @@ export default {
       }
       try {
         await this.$store.commit('CLEAR_ERROR')
-        await this.$store.dispatch('users/usersList/createUser', JSON.parse(JSON.stringify(form)))
+        await this.$store.dispatch('users/createUser', JSON.parse(JSON.stringify(form)))
       } catch (e) {
         console.error(e)
       }

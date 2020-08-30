@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.cards = this.$store.getters['cards/cardsList/cardsList']
+    this.cards = this.$store.getters['cards/cardsList']
   }
 }
 </script>

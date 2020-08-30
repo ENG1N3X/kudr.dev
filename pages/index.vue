@@ -20,10 +20,10 @@ export default {
   },
   async fetch({ store }) {
     try {
-      if (store.getters['cards/cardsList/cardsList'].length === 0) {
-        await store.dispatch('cards/cardsList/getAllCards')
+      if (!store.getters['cards/cardsList'].length) {
+        await store.dispatch('cards/getAllCards')
       }
-      if (store.getters['tunings/tuningsList'].length === 0) {
+      if (!store.getters['tunings/tuningsList'].length) {
         await store.dispatch('tunings/getAllTunings')
       }
     } catch (e) {

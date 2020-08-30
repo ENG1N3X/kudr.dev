@@ -124,7 +124,7 @@ export default {
       fd.append('modified', new Date().toLocaleString())
       try {
         await this.$axios.$put('/api/v1/card/update/' + id, fd)
-        await this.$store.dispatch('cards/cardsList/getAllCards')
+        await this.$store.dispatch('cards/getAllCards')
       } catch (e) {
         console.error(e)
       }
@@ -133,7 +133,7 @@ export default {
     async remove(id) {
       try {
         await this.$axios.$delete('/api/v1/card/remove/' + id)
-        await this.$store.dispatch('cards/cardsList/getAllCards')
+        await this.$store.dispatch('cards/getAllCards')
       } catch (e) {
         console.error(e)
       }

@@ -82,7 +82,7 @@ export default {
       try {
         await this.$store.commit('CLEAR_ERROR')
         await this.$axios.$put('/api/v1/user/update/' + id, form)
-        await this.$store.dispatch('users/usersList/getAllUsers')
+        await this.$store.dispatch('users/getAllUsers')
       } catch (e) {
         await this.$store.commit('SET_ERROR', e.response.data.message, { root: true })
         console.error(e)
@@ -96,7 +96,7 @@ export default {
     async remove(id) {
       try {
         await this.$axios.$delete('/api/v1/user/remove/' + id)
-        await this.$store.dispatch('users/usersList/getAllUsers')
+        await this.$store.dispatch('users/getAllUsers')
       } catch (e) {
         console.error(e)
       }

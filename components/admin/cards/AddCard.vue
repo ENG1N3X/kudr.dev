@@ -96,7 +96,7 @@ export default {
       fd.append('created', new Date().toLocaleString())
       try {
         await this.$axios.$post('/api/v1/card/create', fd)
-        await this.$store.dispatch('cards/cardsList/getAllCards')
+        await this.$store.dispatch('cards/getAllCards')
       } catch (e) {
         console.error(e)
       }

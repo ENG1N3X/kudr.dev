@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     users() {
-      return this.$store.getters['users/usersList/usersList']
+      return this.$store.getters['users/usersList']
     }
   }
 }

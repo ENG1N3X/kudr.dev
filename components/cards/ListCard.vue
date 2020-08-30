@@ -1,7 +1,6 @@
 <template>
   <nuxt-link :to="`/card/${card._id}`" class="cardItem">
     <div class="cardItem__image">
-      <!-- <img src="cards/nuxt-card.png" alt="card-image" /> -->
       <img :src="`${card.image}`" :alt="`${card.title}`" />
     </div>
     <div class="cardItem__content">
