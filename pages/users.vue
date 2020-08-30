@@ -18,8 +18,8 @@ export default {
   },
   async fetch({ store }) {
     try {
-      if (store.getters['users/usersList/usersList'].length === 0) {
-        await store.dispatch('users/usersList/getAllUsers')
+      if (store.getters['users/usersList'].length === 0) {
+        await store.dispatch('users/getAllUsers')
       }
     } catch (e) {
       console.error(e)

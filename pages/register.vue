@@ -86,7 +86,7 @@ export default {
       try {
         this.isReg = false
         await this.$store.commit('CLEAR_ERROR')
-        await this.$store.dispatch('users/usersList/createUser', JSON.parse(JSON.stringify(this.form)))
+        await this.$store.dispatch('users/createUser', JSON.parse(JSON.stringify(this.form)))
       } catch (e) {
         console.error(e)
       }

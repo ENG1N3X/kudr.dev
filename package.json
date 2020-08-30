@@ -13,9 +13,12 @@
     "mongo": "sudo systemctl start mongod"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",

@@ -17,11 +17,14 @@ export default {
   },
   async fetch({ store }) {
     try {
-      if (!store.getters['cards/cardsList/cardsList'].length) {
-        await store.dispatch('cards/cardsList/getAllCards')
+      if (!store.getters['cards/cardsList'].length) {
+        await store.dispatch('cards/getAllCards')
       }
-      if (!store.getters['users/usersList/usersList'].length) {
-        await store.dispatch('users/usersList/getAllUsers')
+      if (!store.getters['users/usersList'].length) {
+        await store.dispatch('users/getAllUsers')
+      }
+      if (!store.getters['tunings/tuningsList'].length) {
+        await store.dispatch('tunings/getAllTunings')
       }
     } catch (e) {
       console.error(e)
