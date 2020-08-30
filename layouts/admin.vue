@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import AppHeader from '~/components/header.vue'
-import AppFooter from '~/components/footer.vue'
+import AppHeader from '~/components/Header.vue'
+import AppFooter from '~/components/Footer.vue'
 import AppAdminNav from '~/components/admin/Nav.vue'
 
 export default {

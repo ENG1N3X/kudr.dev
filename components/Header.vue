@@ -1,6 +1,6 @@
 <template>
   <b-container class="header mt-2 mb-50">
-    <b-row class="align-items-center">
+    <b-row class="align-items-center" style="min-height: 55px;">
       <b-col>
         <b-nav class="headerNav">
           <b-nav-item to="/" exact>

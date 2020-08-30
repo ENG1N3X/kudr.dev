@@ -1,10 +1,12 @@
 <template>
   <div>
+    <app-author />
     <app-cards-list />
   </div>
 </template>
 
 <script>
+import AppAuthor from '~/components/Author.vue'
 import AppCardsList from '~/components/cards/List.vue'
 
 export default {
@@ -13,6 +15,7 @@ export default {
   },
   layout: 'default',
   components: {
+    AppAuthor,
     AppCardsList
   },
   async fetch({ store }) {
