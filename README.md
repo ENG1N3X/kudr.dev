@@ -1,6 +1,6 @@
 # kudr.dev
 
-> **alfa notebook branch** source code
+> **alfa branch** source code
 
 ## Application info
 
