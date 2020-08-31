@@ -6,7 +6,7 @@
         <b-col cols="2">
           <app-admin-nav />
         </b-col>
-        <b-col cols="10">
+        <b-col col="10">
           <nuxt />
         </b-col>
       </b-row>
@@ -21,7 +21,7 @@ import AppFooter from '~/components/Footer.vue'
 import AppAdminNav from '~/components/admin/Nav.vue'
 
 export default {
-  // middleware: ['auth', 'is-auth'],
+  middleware: ['auth', 'is-auth'],
   components: {
     AppHeader,
     AppFooter,

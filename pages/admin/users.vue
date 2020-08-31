@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row class="align-items-center">
     <app-add-user />
     <app-list-user v-for="user in users" :key="user._id" :user="user" />
   </b-row>

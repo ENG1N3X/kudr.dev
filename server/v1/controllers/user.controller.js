@@ -24,10 +24,14 @@ module.exports.remove = async (req, res) => {
 
 module.exports.update = async (req, res) => {
   try {
-    const userFound = await User.findOne({ login: req.body.login })
-    if (userFound) return res.status(302).json({ message: 'Данный логин уже используется!' })
-    req.body.modified = moment().format('HH-mm-ss-DD-MM-YYYY')
-    await User.updateOne({ _id: req.params.id }, req.body, { new: true })
+    const userUpdate = {
+      name: req.body.name,
+      password: req.body.password,
+      modified: moment().format('HH-mm-ss-DD-MM-YYYY'),
+      admin: req.body.admin
+    }
+
+    await User.updateOne({ _id: req.params.id }, userUpdate, { new: true })
     res.json({ message: 'Пользователь обновлен.' })
   } catch (e) {
     res.status(500).json({ message: 'Ошибка обновления данных.' })

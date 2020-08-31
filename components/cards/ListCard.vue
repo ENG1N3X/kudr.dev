@@ -4,7 +4,7 @@
       <img :src="`${card.image}`" :alt="`${card.title}`" />
     </div>
     <div class="cardItem__content">
-      <h6>{{ card.title }}</h6>
+      <h4>{{ card.title }}</h4>
       <span>{{ card.subtitle }}</span>
     </div>
   </nuxt-link>

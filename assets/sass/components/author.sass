@@ -1,14 +1,13 @@
 .author
     background: $color-main
-    border-radius: 8px
     box-shadow: 0 0 4px $color-000
-    padding: 10px
+    padding: 15px
 
     &Name
-        color: $color-44e
+        color: $color-green
         font-size: rem(50)
         text-align: center
-        text-transform: uppercase
+        letter-spacing: 2px
         margin-bottom: 0
 
     &Text
@@ -17,6 +16,9 @@
         font-size: rem(15)
 
 #authorModal
+    border: 10px solid $color-main
+    .modal-content
+        border: 8px solid $color-main
     .modal-header
         align-items: center
         .modal-title
@@ -31,7 +33,7 @@
         justify-content: center
         li
             &:not(:last-child)
-                margin-right: 40px
+                margin-right: 60px
             &:hover
                 a
                     svg
@@ -40,5 +42,3 @@
                 svg
                     transition: opacity .2s ease-in-out
                     color: $color-000
-            
-

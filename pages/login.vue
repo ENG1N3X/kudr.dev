@@ -2,24 +2,24 @@
   <b-container style="margin: auto">
     <b-row class="justify-content-center">
       <b-col cols="12">
-        <h3 class="mainTitle mb-5 text-center">Вход</h3>
+        <h3 class="mainTitle mb-5 text-center">Login to kudr.dev</h3>
       </b-col>
-      <b-col cols="4">
+      <b-col cols="10" sm="8" md="6" lg="4">
         <b-form @submit.prevent="onSubmit">
           <b-form-group>
-            <b-form-input v-model="form.login" type="text" placeholder="Введите login" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.<br /></span>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.<br /></span>
+            <b-form-input v-model="form.login" type="text" placeholder="Write login" class="mb-2" required></b-form-input>
+            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Login must contain 3 characters.<br /></span>
+            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Login must contain no more than 21 characters.<br /></span>
             <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span>
           </b-form-group>
           <b-form-group>
-            <b-form-input v-model="form.password" type="password" placeholder="Введите пароль" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.<br /></span>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
+            <b-form-input v-model="form.password" type="password" placeholder="Write password" class="mb-2" required></b-form-input>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">The password must contain at least 3 characters.<br /></span>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">The password must contain no more than 21 characters.</span>
           </b-form-group>
           <div class="d-flex justify-content-between align-items-center">
-            <nuxt-link to="/register">Ещё нет аккаунта?</nuxt-link>
-            <b-button type="submit" variant="success">Вход</b-button>
+            <nuxt-link to="/register">Don't have an account yet?</nuxt-link>
+            <b-button type="submit" variant="success">Login</b-button>
           </div>
         </b-form>
       </b-col>
@@ -32,7 +32,7 @@ import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   head: {
-    title: 'Логин'
+    title: 'Login kudr.dev'
   },
   data() {
     return {
