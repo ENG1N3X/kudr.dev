@@ -6,7 +6,8 @@ export default function({ $auth, store }) {
 
   if (token) {
     if (!$auth.loggedIn) {
-      const token = $auth.$storage.getLocalStorage('token')
+      autoLogin(store, token)
+    } else if ($auth.loggedIn && !$auth.user.id) {
       autoLogin(store, token)
     }
   } else if (!token) {

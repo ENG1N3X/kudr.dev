@@ -1,6 +1,7 @@
 <template>
   <b-col cols="3" class="bg-a5a rounded mb-4">
-    <b-form>
+    <b-form style="padding: 20px 0;">
+      <h4>Создать</h4>
       <b-form-group label="Введите имя" class="mb-2">
         <b-form-input v-model="form.name" class="adminCard__input" placeholder="Имя" required></b-form-input>
         <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Имя должно содержать от 2х символов.<br /></span>
@@ -71,7 +72,7 @@ export default {
       }
       try {
         await this.$store.commit('CLEAR_ERROR')
-        await this.$store.dispatch('users/usersList/createUser', JSON.parse(JSON.stringify(form)))
+        await this.$store.dispatch('users/createUser', JSON.parse(JSON.stringify(form)))
       } catch (e) {
         console.error(e)
       }

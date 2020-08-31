@@ -6,7 +6,7 @@
         <b-col cols="2">
           <app-admin-nav />
         </b-col>
-        <b-col cols="10">
+        <b-col col="10">
           <nuxt />
         </b-col>
       </b-row>
@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import AppHeader from '~/components/header.vue'
-import AppFooter from '~/components/footer.vue'
+import AppHeader from '~/components/Header.vue'
+import AppFooter from '~/components/Footer.vue'
 import AppAdminNav from '~/components/admin/Nav.vue'
 
 export default {

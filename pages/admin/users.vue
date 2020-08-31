@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row class="align-items-center">
     <app-add-user />
     <app-list-user v-for="user in users" :key="user._id" :user="user" />
   </b-row>
@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     users() {
-      return this.$store.getters['users/usersList/usersList']
+      return this.$store.getters['users/usersList']
     }
   }
 }

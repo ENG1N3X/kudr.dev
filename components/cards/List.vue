@@ -7,7 +7,7 @@
     </b-row>
     <b-row v-else>
       <b-col>
-        <span class="d-block color-000 text-center">Ни одна карточка не загружена.</span>
+        <span class="d-block color-fff text-center" style="font-size: 1.8rem;">No card loaded.</span>
       </b-col>
     </b-row>
   </b-container>
@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.cards = this.$store.getters['cards/cardsList/cardsList']
+    this.cards = this.$store.getters['cards/cardsList']
   }
 }
 </script>

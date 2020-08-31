@@ -1,21 +1,20 @@
 <template>
   <b-col cols="3" class="mb-4">
     <b-form>
-      <b-form-group label="Введите новое имя" class="mb-2">
-        <b-form-input v-model="form.name" class="adminCard__input" placeholder="Имя" required></b-form-input>
+      <b-form-group>
         <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Имя должно содержать от 2х символов.<br /></span>
         <span v-if="$v.form.name.$dirty && !$v.form.name.maxLength" class="color-error">Имя должно содержать не более 15ти символов.</span>
+        <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.<br /></span>
+        <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
       </b-form-group>
-      <b-form-group label="Введите новый логин" class="mb-2">
-        <b-form-input v-model="form.login" class="adminCard__input" placeholder="Логин" required></b-form-input>
-        <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Логин должен содержать от 3х символов.<br /></span>
-        <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Логин должен содержать не более 21ого символов.<br /></span>
-        <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span>
+      <b-form-group label="Введите новое имя" class="mb-2">
+        <b-form-input v-model="form.name" class="adminCard__input" placeholder="Имя" required></b-form-input>
+      </b-form-group>
+      <b-form-group label="Логин аккаунта" class="mb-2">
+        <b-form-input class="adminCard__input" :placeholder="form.login" disabled></b-form-input>
       </b-form-group>
       <b-form-group label="Введите новый пароль" class="mb-2">
         <b-form-input v-model="form.password" class="adminCard__input" placeholder="Пароль" required></b-form-input>
-        <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">Пароль должен содержать от 3х символов.<br /></span>
-        <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
       </b-form-group>
       <b-form-group label="Выберите права доступа" class="mb-2">
         <b-form-radio v-model="form.admin" value="0">Не администратор</b-form-radio>
@@ -25,6 +24,16 @@
       <b-form-group>
         <b-button variant="warning" type="submit" class="color-fff" @click.prevent="edit(user._id, form)">Изменить</b-button>
         <b-button variant="danger" type="submit" class="color-fff float-right" @click.prevent="remove(user._id)">Удалить</b-button>
+      </b-form-group>
+      <b-form-group>
+        <span class="color-000"
+          >Создан:<br />
+          {{ form.created }}.</span
+        >
+        <span class="color-000" v-if="form.modified"
+          >Последние правки:<br />
+          {{ form.modified }}.</span
+        >
       </b-form-group>
     </b-form>
   </b-col>
@@ -40,7 +49,9 @@ export default {
         name: this.user.name,
         login: this.user.login,
         password: this.user.password,
-        admin: this.user.admin
+        admin: this.user.admin,
+        modified: this.user.modified,
+        created: this.user.created
       },
       isReg: false
     }
@@ -57,11 +68,6 @@ export default {
         required,
         minLength: minLength(2),
         maxLength: maxLength(15)
-      },
-      login: {
-        required,
-        minLength: minLength(3),
-        maxLength: maxLength(21)
       },
       password: {
         required,
@@ -82,7 +88,7 @@ export default {
       try {
         await this.$store.commit('CLEAR_ERROR')
         await this.$axios.$put('/api/v1/user/update/' + id, form)
-        await this.$store.dispatch('users/usersList/getAllUsers')
+        await this.$store.dispatch('users/getAllUsers')
       } catch (e) {
         await this.$store.commit('SET_ERROR', e.response.data.message, { root: true })
         console.error(e)
@@ -96,7 +102,7 @@ export default {
     async remove(id) {
       try {
         await this.$axios.$delete('/api/v1/user/remove/' + id)
-        await this.$store.dispatch('users/usersList/getAllUsers')
+        await this.$store.dispatch('users/getAllUsers')
       } catch (e) {
         console.error(e)
       }

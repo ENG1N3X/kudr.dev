@@ -10,9 +10,9 @@
         <h1 class="cardPage__title">{{ card.title }}</h1>
         <small class="cardPage__subtitle">{{ card.subtitle }}</small>
         <p class="cardPage__desc">{{ card.description }}</p>
-        <time class="cardPage__created">Добавлено {{ card.created }}</time>
-        <time class="cardPage__modified" v-if="card.modified">Изменено {{ card.modified }}</time>
-        <b-button :href="card.link" target="_blank" :disabled="!card.link">Ссылка</b-button>
+        <time class="cardPage__created">Created {{ card.created }}</time>
+        <time class="cardPage__modified" v-if="card.modified">Modified {{ card.modified }}</time>
+        <b-button :href="card.link" target="_blank" :disabled="!card.link">Project link</b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -21,7 +21,7 @@
 <script>
 export default {
   head: {
-    title: `Карточка`
+    title: `Card kudr.dev`
   },
   async asyncData({ params, $axios }) {
     try {

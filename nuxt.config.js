@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -38,7 +38,22 @@ module.exports = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
+    // Doc: https://www.npmjs.com/package/@nuxtjs/fontawesome
+    '@nuxtjs/fontawesome'
   ],
+  fontawesome: {
+    imports: [
+      // Import free fontawesome icons
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['fab']
+      }
+    ]
+  },
   /*
    ** Nuxt.js modules
    */

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppHeader from '~/components/header.vue'
-import AppFooter from '~/components/footer.vue'
+import AppHeader from '~/components/Header.vue'
+import AppFooter from '~/components/Footer.vue'
 
 export default {
   middleware: 'is-auth',
@@ -24,4 +24,5 @@ export default {
   min-height: 100vh
   display: flex
   flex-direction: column
+  background: #283f52
 </style>

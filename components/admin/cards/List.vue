@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     cards() {
-      return this.$store.getters['cards/cardsList/cardsList']
+      return this.$store.getters['cards/cardsList']
     }
   }
 }

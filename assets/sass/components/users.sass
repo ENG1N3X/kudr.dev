@@ -1,16 +1,19 @@
 .users
     overflow-x: auto
+    border: 1px solid $color-fff
+    border-radius: 0 8px 0 8px
+    padding: 25px 15px
     .usersHead
-        color: $color-main
+        color: $color-fff
         text-align: center
         font-size: rem(16)
         padding: 10px
-        border-bottom: 1px solid $color-a5a
+        border-bottom: 1px solid $color-fff
     .usersInfo
-        color: $color-000
+        color: $color-a5a
         text-align: center
         font-size: rem(14)
-        &.default,&.admin,&.owner
+        &.default, &.admin, &.owner
             color: $color-fff
             border-radius: 12px
             padding: 2px
@@ -19,4 +22,4 @@
         &.admin
             background: $color-error
         &.owner
-            background: $color-44e
+            background: $color-green
