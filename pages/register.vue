@@ -8,8 +8,8 @@
         <b-form @submit.prevent="onSubmit">
           <b-form-group>
             <b-form-input v-model.trim="form.name" type="text" placeholder="Write your name" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Name must contain 3 characters.<br /></span>
-            <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Name must contain no more than 21 characters.<br /></span>
+            <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Name must contain 3 characters.<br /></span>
+            <span v-if="$v.form.name.$dirty && !$v.form.name.maxLength" class="color-error">Name must contain no more than 21 characters.<br /></span>
           </b-form-group>
           <b-form-group>
             <b-form-input v-model="form.login" type="text" placeholder="Write you login" class="mb-2" required></b-form-input>

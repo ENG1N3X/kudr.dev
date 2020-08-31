@@ -24,11 +24,20 @@ module.exports.remove = async (req, res) => {
 
 module.exports.update = async (req, res) => {
   try {
-    const userUpdate = {
-      name: req.body.name,
-      password: req.body.password,
-      modified: moment().format('HH-mm-ss-DD-MM-YYYY'),
-      admin: req.body.admin
+    let userUpdate = ''
+    if (req.body.password) {
+      userUpdate = {
+        name: req.body.name,
+        password: req.body.password,
+        modified: moment().format('HH-mm-ss-DD-MM-YYYY'),
+        admin: req.body.admin
+      }
+    } else {
+      userUpdate = {
+        name: req.body.name,
+        modified: moment().format('HH-mm-ss-DD-MM-YYYY'),
+        admin: req.body.admin
+      }
     }
 
     await User.updateOne({ _id: req.params.id }, userUpdate, { new: true })
@@ -46,7 +55,8 @@ module.exports.getById = async (req, res) => {
       login: user.login,
       name: user.name,
       admin: user.admin,
-      created: user.created
+      created: user.created,
+      modified: user.modified
     }
     res.status(200).json(userData)
   } catch (e) {

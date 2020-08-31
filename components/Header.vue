@@ -17,7 +17,7 @@
         </b-col>
         <b-col class="text-right d-flex flex-column d-md-block" v-if="$auth.loggedIn">
           <h4 class="headerProfile">
-            Профиль, <nuxt-link to="!#">{{ $auth.user.login }}</nuxt-link>
+            Профиль, <nuxt-link to="/profile">{{ $auth.user.login }}</nuxt-link>
           </h4>
           <button class="btn headerLink" style="max-width: 28px; padding: 0; margin-left: auto;" type="submit" @click="logOut()">
             <font-awesome-icon :icon="['fas', 'sign-out-alt']" />

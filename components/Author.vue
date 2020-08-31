@@ -1,7 +1,7 @@
 <template>
   <div style="padding: 0 15px;">
     <b-container class="author mb-30" style="border-radius: 8px 0 8px 0">
-      <b-row class="align-items-center mb-20">
+      <b-row class="align-items-center">
         <b-col col cols="12" lg="6">
           <h1 class="authorName">{{ settings.title }}</h1>
         </b-col>
