@@ -18,7 +18,7 @@ export default {
     AppAuthor,
     AppCardsList
   },
-  async fetch({ store }) {
+  async asyncData({ store }) {
     try {
       if (!store.getters['cards/cardsList'].length) {
         await store.dispatch('cards/getAllCards')
