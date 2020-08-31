@@ -13,7 +13,7 @@
           </span>
         </b-col>
       </b-row>
-      <div style="position: fixed;top: 300px;right: 0;background: #26c44e;color: #fff;padding: 10px 20px;border-radius: 5px 0 0 5px;font-size: 1rem; display: flex; flex-direction: column;">
+      <!-- <div style="position: fixed;top: 300px;right: 0;background: #26c44e;color: #fff;padding: 10px 20px;border-radius: 5px 0 0 5px;font-size: 1rem; display: flex; flex-direction: column;">
         <span style="color: red; padding: 0;">Info</span>
         <span v-if="$auth.loggedIn">Logged: {{ $auth.loggedIn }} </span>
         <span v-if="$auth.loggedIn">Login: {{ $auth.user.login }} </span>
@@ -22,7 +22,7 @@
         <span class="d-none d-md-inline d-lg-none color-main" style="font-size: 1.5rem;">PS: md</span>
         <span class="d-none d-lg-inline d-xl-none color-main" style="font-size: 1.5rem;">PS: lg</span>
         <span class="d-none d-xl-inline color-main" style="font-size: 1.5rem;">PS: xl</span>
-      </div>
+      </div> -->
     </b-container>
   </div>
 </template>
