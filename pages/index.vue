@@ -18,7 +18,6 @@ export default {
     AppAuthor,
     AppCardsList
   },
-  middleware: 'auth',
   async fetch({ store }) {
     try {
       if (!store.getters['cards/cardsList'].length) {
