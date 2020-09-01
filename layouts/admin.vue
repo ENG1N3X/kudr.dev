@@ -6,7 +6,7 @@
         <b-col cols="2">
           <app-admin-nav />
         </b-col>
-        <b-col col="10">
+        <b-col cols="10">
           <nuxt />
         </b-col>
       </b-row>
