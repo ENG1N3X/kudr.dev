@@ -42,17 +42,10 @@ module.exports = {
     '@nuxtjs/fontawesome'
   ],
   fontawesome: {
-    imports: [
-      // Import free fontawesome icons
-      {
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      },
-      {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab']
-      }
-    ]
+    icons: {
+      solid: true,
+      brands: true
+    }
   },
   /*
    ** Nuxt.js modules
