@@ -23,7 +23,7 @@
         <b-form-radio v-model="form.admin" value="1">Администратор</b-form-radio>
         <b-form-radio v-model="form.admin" value="2">Основатель</b-form-radio>
       </b-form-group>
-      <b-button block variant="success" type="submit" class="color-fff" @click.prevent="create(form)">Создать</b-button>
+      <b-button block variant="success" type="submit" class="color-fff" @click.prevent="create(form)" :disabled="$auth.user.admin != 2 ? true : false">Создать</b-button>
     </b-form>
   </b-col>
 </template>

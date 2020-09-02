@@ -8,13 +8,13 @@
         <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">Пароль должен содержать не более 21ого символов.</span>
       </b-form-group>
       <b-form-group label="Введите новое имя" class="mb-2">
-        <b-form-input v-model="form.name" class="adminCard__input" placeholder="Имя" required></b-form-input>
+        <b-form-input type="text" v-model="form.name" class="adminCard__input" placeholder="Имя" required></b-form-input>
       </b-form-group>
       <b-form-group label="Логин аккаунта" class="mb-2">
-        <b-form-input class="adminCard__input" :placeholder="form.login" disabled></b-form-input>
+        <b-form-input type="text" class="adminCard__input" :placeholder="form.login" disabled></b-form-input>
       </b-form-group>
       <b-form-group label="Введите новый пароль" class="mb-2">
-        <b-form-input v-model="form.password" class="adminCard__input" placeholder="Пароль" required></b-form-input>
+        <b-form-input type="password" v-model="form.password" class="adminCard__input" placeholder="Пароль" required></b-form-input>
       </b-form-group>
       <b-form-group label="Выберите права доступа" class="mb-2">
         <b-form-radio v-model="form.admin" value="0">Не администратор</b-form-radio>
@@ -22,8 +22,8 @@
         <b-form-radio v-model="form.admin" value="2">Основатель</b-form-radio>
       </b-form-group>
       <b-form-group>
-        <b-button variant="warning" type="submit" class="color-fff" @click.prevent="edit(user._id, form)">Изменить</b-button>
-        <b-button variant="danger" type="submit" class="color-fff float-right" @click.prevent="remove(user._id)">Удалить</b-button>
+        <b-button variant="warning" type="submit" class="color-fff" @click.prevent="edit(user._id, form)" :disabled="$auth.user.admin != 2 ? true : false">Изменить</b-button>
+        <b-button variant="danger" type="submit" class="color-fff float-right" @click.prevent="remove(user._id)" :disabled="$auth.user.admin != 2 ? true : false">Удалить</b-button>
       </b-form-group>
       <b-form-group>
         <span class="color-000"

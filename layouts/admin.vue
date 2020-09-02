@@ -1,12 +1,12 @@
 <template>
   <div class="admin-layout">
     <app-header />
-    <b-container class="admin">
+    <b-container style="padding-bottom: 30px;">
       <b-row>
-        <b-col cols="2">
+        <b-col cols="12" lg="2">
           <app-admin-nav />
         </b-col>
-        <b-col cols="10">
+        <b-col cols="12" lg="10">
           <nuxt />
         </b-col>
       </b-row>

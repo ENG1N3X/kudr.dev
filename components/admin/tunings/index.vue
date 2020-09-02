@@ -5,7 +5,7 @@
         <h2 class="mb-0">Основные настройки</h2>
       </b-col>
       <b-col cols="3">
-        <b-button block variant="success" @click.prevent="update(form)">Обновить</b-button>
+        <b-button block variant="success" @click.prevent="update(form)" :disabled="$auth.user.admin != 2 ? true : false">Обновить</b-button>
       </b-col>
     </b-row>
     <b-row>

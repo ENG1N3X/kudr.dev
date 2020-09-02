@@ -73,8 +73,8 @@
             ></b-form-file>
           </b-col>
           <b-col cols="5" class="text-right">
-            <b-button variant="warning" type="submit" style="color: #fff !important" @click.prevent="edit(card._id, form)">Изменить</b-button>
-            <b-button variant="danger" type="submit" class="color-fff" @click.prevent="remove(card._id)">Удалить</b-button>
+            <b-button variant="warning" type="submit" style="color: #fff !important" @click.prevent="edit(card._id, form)" :disabled="$auth.user.admin != 2 ? true : false">Изменить</b-button>
+            <b-button variant="danger" type="submit" class="color-fff" @click.prevent="remove(card._id)" :disabled="$auth.user.admin != 2 ? true : false">Удалить</b-button>
           </b-col>
         </b-row>
       </b-col>
