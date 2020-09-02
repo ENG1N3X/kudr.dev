@@ -7,20 +7,22 @@
       <b-col cols="10" sm="8" md="6" lg="4">
         <b-form @submit.prevent="onSubmit">
           <b-form-group>
-            <b-form-input v-model.trim="form.name" type="text" placeholder="Write your name" class="mb-2" required></b-form-input>
             <span v-if="$v.form.name.$dirty && !$v.form.name.minLength" class="color-error">Name must contain 3 characters.<br /></span>
             <span v-if="$v.form.name.$dirty && !$v.form.name.maxLength" class="color-error">Name must contain no more than 21 characters.<br /></span>
-          </b-form-group>
-          <b-form-group>
-            <b-form-input v-model="form.login" type="text" placeholder="Write you login" class="mb-2" required></b-form-input>
             <span v-if="$v.form.login.$dirty && !$v.form.login.minLength" class="color-error">Login must contain 3 characters.<br /></span>
             <span v-if="$v.form.login.$dirty && !$v.form.login.maxLength" class="color-error">Login must contain no more than 21 characters.<br /></span>
             <span v-if="$store.getters['error']" class="color-error">{{ $store.getters['error'] }}</span>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">The password must contain at least 3 characters.<br /></span>
+            <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">The password must contain no more than 21 characters.</span>
+          </b-form-group>
+          <b-form-group>
+            <b-form-input v-model.trim="form.name" type="text" placeholder="Write your name" class="mb-2" required></b-form-input>
+          </b-form-group>
+          <b-form-group>
+            <b-form-input v-model="form.login" type="text" placeholder="Write you login" class="mb-2" required></b-form-input>
           </b-form-group>
           <b-form-group>
             <b-form-input v-model="form.password" type="password" placeholder="Write you password" class="mb-2" required></b-form-input>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.minLength" class="color-error">The password must contain at least 3 characters.<br /></span>
-            <span v-if="$v.form.password.$dirty && !$v.form.password.maxLength" class="color-error">The password must contain no more than 21 characters.</span>
           </b-form-group>
           <div class="d-flex justify-content-between align-items-center">
             <nuxt-link to="/login">Already have an account?</nuxt-link>

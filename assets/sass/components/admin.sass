@@ -1,4 +1,5 @@
 .adminNav
+    flex-direction: column
     .nav-item
         .nav-link
             font-family: Ubuntu-Medium, sans-serif
@@ -65,3 +66,18 @@
                 padding: 10px 20px
                 max-height: 800px
                 visibility: visible
+
+@media screen and ( max-width:  991px)
+    .adminNav
+        align-items: center
+        flex-direction: row
+        justify-content: center
+        padding-bottom: 30px
+        .nav-item
+            &:not(:last-child)
+                margin-right: 15px
+                margin-bottom: 0
+        .mainTitle
+            display: none
+
+    

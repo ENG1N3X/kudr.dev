@@ -5,7 +5,7 @@
         <h2 class="mb-0">Добавить</h2>
       </b-col>
       <b-col cols="3" class="text-right">
-        <b-button variant="success" type="submit" class="color-fff" @click.prevent="create(form)">Добавить</b-button>
+        <b-button variant="success" type="submit" class="color-fff" @click.prevent="create(form)" :disabled="$auth.user.admin != 2 ? true : false">Добавить</b-button>
       </b-col>
     </b-row>
     <b-row class="adminCard__add">
