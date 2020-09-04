@@ -8,8 +8,8 @@
             <a :href="nuxtLink" target="_blank" class="color-green">{{ nuxt }}</a>
           </span>
           <span class="footerText">
-            Copyright by
-            <a :href="`${copyrightLink}`" target="_blank" class="color-000">{{ copyright }}</a>
+            Copyrighted by
+            <a :href="`${copyrightedLink}`" target="_blank" class="color-000">{{ copyrighted }}</a>
           </span>
         </b-col>
       </b-row>
@@ -33,8 +33,8 @@ export default {
     return {
       nuxt: 'Nuxt.JS',
       nuxtLink: 'https://nuxtjs.org/',
-      copyright: '@eng1n3x',
-      copyrightLink: 'https://github.com/ENG1N3X?tab=repositories'
+      copyrighted: '@eng1n3x',
+      copyrightedLink: 'https://github.com/ENG1N3X?tab=repositories'
     }
   }
 }
