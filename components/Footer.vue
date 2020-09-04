@@ -8,8 +8,7 @@
             <a :href="nuxtLink" target="_blank" class="color-green">{{ nuxt }}</a>
           </span>
           <span class="footerText">
-            Copyrighted by
-            <a :href="`${copyrightedLink}`" target="_blank" class="color-000">{{ copyrighted }}</a>
+            Copyrighted <a :href="`${copyrightedLink}`" target="_blank" class="color-000">{{ copyrighted }}</a>
           </span>
         </b-col>
       </b-row>
