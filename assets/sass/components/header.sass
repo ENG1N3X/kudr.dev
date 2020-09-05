@@ -4,6 +4,7 @@
     padding: 10px 0
 
 .headerNav
+    flex-wrap: nowrap
     .nav-item
         .nav-link
             font-size: rem(16)
@@ -16,42 +17,44 @@
                 transition: color .2s linear
                 color: $color-green
         &:not(:last-child)
-            margin-right: 30px
+            margin-right: 20px
     
 .headerProfile
     display: inline-block
-    color: $color-fff
-    font-size: rem(14)
-    text-align: right
-    margin-bottom: 0
     margin-right: 20px
-    a
+    svg
+        animation: anim-profile 15s ease-in-out infinite
+        font-size: rem(22)
+    &:hover
+        svg
+            color: $color-fff !important
+
+@keyframes anim-profile
+    0%
         color: $color-green
+    25%
+        color: $color-orange
+    50%
+        color: $color-error
+    75%
+        color: $color-fff
+    100%
+        color: $color-green      
+
+.headerLink
+    padding: 0
+    float: right
+    color: $color-fff
+    border: none
+    svg
         transition: color .2s linear
-        &:hover
+        font-size: rem(23)
+    &:hover
+        svg
             transition: color .2s linear
             color: $color-green
 
-.headerLink
-    color: $color-fff
-    svg
-        transition: opacity .2s linear
-        font-size: rem(24)
-    &:hover
-        color: $color-fff
-        svg
-            transition: opacity .2s linear
-            opacity: 0.5
-
 @media screen and ( max-width: 767px )
-    .headerNav
-        .nav-item
-            &:not(:last-child)
-                margin-right: 5px
-    .headerProfile
-        margin-right: 0
-        margin-bottom: 2px
-    .headerLink
+    .headerProfile, .headerLink
         svg
-            font-size: rem(16)
-    
+            font-size: rem(18)  

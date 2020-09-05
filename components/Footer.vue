@@ -10,6 +10,9 @@
           <span class="footerText">
             Copyrighted <a :href="`${copyrightedLink}`" target="_blank" class="color-000">{{ copyrighted }}</a>
           </span>
+          <span class="footerText" v-if="$auth.loggedIn">
+            Logged as <nuxt-link to="/profile">{{ $auth.user.login }}</nuxt-link>
+          </span>
         </b-col>
       </b-row>
       <!-- <div style="position: fixed;top: 300px;right: 0;background: #26c44e;color: #fff;padding: 10px 20px;border-radius: 5px 0 0 5px;font-size: 1rem; display: flex; flex-direction: column;">

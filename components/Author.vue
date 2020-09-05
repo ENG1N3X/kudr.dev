@@ -34,7 +34,7 @@
     <b-container class="author mb-60" style="border-radius: 0 8px 0 8px">
       <b-row class="justify-content-center">
         <b-col cols="10" md="6" lg="4">
-          <b-button block class="bg-orange" v-b-modal.authorModal> {{ modal.title }} </b-button>
+          <b-button block class="bg-orange" v-b-modal.authorModal style="border-radius: 8px 0 8px 0;"> {{ modal.title }} </b-button>
         </b-col>
       </b-row>
     </b-container>

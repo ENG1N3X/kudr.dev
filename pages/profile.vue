@@ -7,7 +7,7 @@
         <span class="status admin" v-else-if="form.admin == 1">Administrator</span>
         <span class="status" v-else>User</span>
       </b-col>
-      <b-col cols="6">
+      <b-col cols="10" lg="8" xl="6">
         <b-form>
           <b-form-group class="mb-20">
             <label class="color-fff">Your name</label>
@@ -51,7 +51,7 @@ import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   head: {
-    title: 'Profile kudr.dev'
+    title: 'Profile'
   },
   data() {
     return {

@@ -11,7 +11,7 @@ import AppList from '~/components/admin/cards/List.vue'
 
 export default {
   head: {
-    title: 'Админ-панель'
+    title: 'Admin-panel'
   },
   layout: 'admin',
   components: {
