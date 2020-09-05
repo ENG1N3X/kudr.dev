@@ -9,7 +9,7 @@ import AppTunings from '~/components/admin/tunings'
 
 export default {
   head: {
-    title: 'Админ-панель'
+    title: 'Admin-panel'
   },
   layout: 'admin',
   components: {

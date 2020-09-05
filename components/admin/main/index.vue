@@ -13,9 +13,9 @@
     </b-col>
     <b-col cols="12">
       <h4 class="color-main">Работа с БД</h4>
-      <b-button variant="success" @click="$store.dispatch('cards/getAllCards')">Обновить карточки</b-button>
-      <b-button variant="success" @click="$store.dispatch('cards/getAllUsers')">Обновить пользователей</b-button>
-      <b-button variant="success" @click="$store.dispatch('tunings/getAllTunings')">Обновить настройки</b-button>
+      <b-button variant="success" class="m-1" @click="$store.dispatch('cards/getAllCards')">Обновить карточки</b-button>
+      <b-button variant="success" class="m-1" @click="$store.dispatch('cards/getAllUsers')">Обновить пользователей</b-button>
+      <b-button variant="success" class="m-1" @click="$store.dispatch('tunings/getAllTunings')">Обновить настройки</b-button>
       <hr />
     </b-col>
     <b-col cols="12">

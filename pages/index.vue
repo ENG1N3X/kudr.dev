@@ -11,7 +11,7 @@ import AppCardsList from '~/components/cards/List.vue'
 
 export default {
   head: {
-    title: 'Main kudr.dev'
+    title: 'Main'
   },
   layout: 'default',
   components: {

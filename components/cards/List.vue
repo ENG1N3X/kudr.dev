@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row v-if="cards.length != 0" class="justify-content-center">
-      <b-col v-for="card in cards" :key="card._id" cols="7" sm="6" md="4" lg="3" class="mb-30">
+      <b-col v-for="card in cards" :key="card._id" cols="12" sm="6" md="4" lg="3" class="mb-30">
         <app-list-card :card="card" />
       </b-col>
     </b-row>

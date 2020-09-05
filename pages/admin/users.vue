@@ -11,7 +11,7 @@ import AppListUser from '~/components/admin/users/ListUser.vue'
 
 export default {
   head: {
-    title: 'Админ-панель'
+    title: 'Admin-panel'
   },
   layout: 'admin',
   components: {

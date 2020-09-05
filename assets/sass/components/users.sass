@@ -1,5 +1,4 @@
 .users
-    overflow-x: auto
     border: 1px solid $color-fff
     border-radius: 0 8px 0 8px
     padding: 25px 15px
@@ -23,3 +22,9 @@
             background: $color-error
         &.owner
             background: $color-green
+
+@media screen and ( max-width:  575px)
+    .users
+        padding: 10px
+        .usersHead, .usersInfo
+            font-size: rem(11)

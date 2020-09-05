@@ -2,7 +2,7 @@
   <div class="header mb-60">
     <b-container>
       <b-row class="align-items-center" style="min-height: 55px;">
-        <b-col>
+        <b-col cols="8" sm="6">
           <b-nav class="headerNav">
             <b-nav-item to="/" exact>
               Main
@@ -15,11 +15,9 @@
             </b-nav-item>
           </b-nav>
         </b-col>
-        <b-col class="text-right d-flex flex-column d-md-block" v-if="$auth.loggedIn">
-          <h4 class="headerProfile">
-            Профиль, <nuxt-link to="/profile">{{ $auth.user.login }}</nuxt-link>
-          </h4>
-          <button class="btn headerLink" style="max-width: 28px; padding: 0; margin-left: auto;" type="submit" @click="logOut()">
+        <b-col cols="4" sm="6" v-if="$auth.loggedIn" class="d-flex align-items-center justify-content-end">
+          <nuxt-link to="/profile" class="headerProfile"><font-awesome-icon :icon="['fas', 'user']"/></nuxt-link>
+          <button class="btn headerLink d-flex" type="submit" @click="logOut()">
             <font-awesome-icon :icon="['fas', 'sign-out-alt']" />
           </button>
         </b-col>

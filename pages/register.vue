@@ -2,7 +2,7 @@
   <b-container style="margin: auto">
     <b-row class="justify-content-center">
       <b-col cols="12">
-        <h3 class="mainTitle mb-5 text-center">Register for kudr.dev</h3>
+        <h3 class="mainTitle mb-5 text-center">Register</h3>
       </b-col>
       <b-col cols="10" sm="8" md="6" lg="4">
         <b-form @submit.prevent="onSubmit">
@@ -45,7 +45,7 @@ import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   head: {
-    title: 'Register kudr.dev'
+    title: 'Register'
   },
   data() {
     return {

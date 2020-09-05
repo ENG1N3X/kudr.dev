@@ -9,7 +9,7 @@ import AppUsersList from '~/components/users/List.vue'
 
 export default {
   head: {
-    title: 'Users kudr.dev'
+    title: 'Users'
   },
   layout: 'default',
   middleware: 'auth',
