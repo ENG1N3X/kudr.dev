@@ -29,7 +29,7 @@
     "lightbox2": "^2.11.3",
     "moment": "^2.27.0",
     "mongoose": "^5.9.19",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
