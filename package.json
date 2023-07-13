@@ -28,7 +28,7 @@
     "jquery": "^3.5.1",
     "lightbox2": "^2.11.3",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.19",
+    "mongoose": "^5.13.15",
     "nuxt": "^2.0.0",
     "vuelidate": "^0.7.5"
   },
